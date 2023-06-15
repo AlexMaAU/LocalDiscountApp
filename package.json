@@ -1,0 +1,46 @@
+{
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "name": "be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "lint": "eslint '**/*.ts'",
+    "format": "eslint src/**/*.ts --fix",
+    "dev": "concurrently \"npx tsc -w\" \"npx nodemon src/app/index.ts\"",
+    "start": "npx ts-node src/app/index.ts",
+    "test": "npx tsc -w"
+  },
+  "author": "Alex Ma",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.0",
+    "ts-dotenv": "^0.9.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.1.4",
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
+}
